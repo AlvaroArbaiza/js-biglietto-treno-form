@@ -34,19 +34,27 @@ function myFunction() {
     // sconto del 20%
     if ( eta < 18 ) {
 
-        prezzoTotale = prezzoTotale * 0.8;
+        scontoMinori =  prezzoTotale * 0.8;
+        prezzoFinale = `
+            <p>Complimenti hai uno sconto del 20&#37; perch&#233; sei minorenne!</p>  
+            <span>${ ( scontoMinori.toFixed(2) ) }&#8364;</span>
+        `;
 
     // sconto del 40%
     } else if ( eta > 65 ) {
 
-        prezzoTotale = prezzoTotale * 0.6;
+        scontoAnziani = prezzoTotale * 0.6;
+        prezzoFinale = `
+        <p>Complimenti hai uno sconto del 40&#37; perch&#233; sei over 65!</p>  
+        <span>${ ( scontoAnziani.toFixed(2) ) }&#8364;</span>
+        `;
 
     } else { 
-        prezzoTotale = prezzoTotale;
+        prezzoFinale = prezzoTotale;
     }
 
     // Inserimento dei dati nell'output
-    document.getElementById("prezzoFinale").innerHTML = "Il prezzo del biglietto è: " + prezzoTotale.toFixed(2) + "&#8364;";
+    document.getElementById("prezzoFinale").innerHTML = prezzoFinale;
 
     console.log(prezzoTotale);
 
