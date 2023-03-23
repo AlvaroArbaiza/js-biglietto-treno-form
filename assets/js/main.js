@@ -40,7 +40,7 @@ function myFunction() {
     // prezzo totale
     let prezzoNormale = tariffa * chilometri;
 
-    // sconto del 20%
+    // sconto minorenni del 20%
     if ( eta < 18 ) {
 
         scontoMinori =  prezzoNormale * 0.8;
@@ -49,7 +49,7 @@ function myFunction() {
             <span>${ ( scontoMinori.toFixed(2) ) }&#8364;</span>
         `;
 
-    // sconto del 40%
+    // sconto over 65 del 40%
     } else if ( eta > 65 ) {
 
         scontoAnziani = prezzoNormale * 0.6;
@@ -62,6 +62,19 @@ function myFunction() {
         prezzoFinale = prezzoNormale;
     }
 
+    // Classe passeggero
+    let classe = document.getElementById("classePasseggero").value;
+
+    if ( classe == "primaClasse" ) {
+
+        classePasseggero = "Prima Classe";
+
+    } else if ( classe == "secondaClasse" ) {
+
+        classePasseggero = "Seconda Classe";
+
+    }
+
     // Inserimento dei dati nell'output
     document.getElementById("bigliettoPasseggero").innerHTML = `
 
@@ -69,15 +82,15 @@ function myFunction() {
 
          <div class="row">
 
-            <div class="col-4">
-                <h3 class="text-uppercase">nome passeggero</h3>
-                <h4>${nomeCognome}</h4>
+            <div class="col-3">
+                <h4 class="text-uppercase">nome passeggero</h4>
+                <h5>${nomeCognome}</h5>
             </div>
 
             <div class="col-2">
 
                 <h5>Classe</h5>
-                <span>${classe.value}</span>
+                <span>${classePasseggero}</span>
             </div>
 
             <div class="col-2">
@@ -92,7 +105,7 @@ function myFunction() {
                 <span>${codiceCP}</span>
             </div>
 
-            <div class="col-2">
+            <div class="col-3">
 
                 <h5>Costo Biglietto</h5>
                 <span>${prezzoFinale}</span>
@@ -101,7 +114,7 @@ function myFunction() {
     
     ` ;
 
-    console.log(prezzoTotale);
+    console.log(nomeCognome,classePasseggero,carrozza,codiceCP,prezzoFinale);
 
 }
 
