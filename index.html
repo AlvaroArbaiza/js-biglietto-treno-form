@@ -17,9 +17,20 @@
 
     <div class="container">
 
-        <h1 class="mb-5">Acquista il tuo biglietto!</h1>
+        <!-- <h1 class="mb-5">Acquista il tuo biglietto!</h1> -->
+
+        <h2 class="text-uppercase mb-5">calcola il prezzo del tuo biglietto</h2>
     
         <form>
+
+            <div class="mb-3">
+    
+                <label for="nomeCognome" class="form-label">
+                    Nome e Cognome               
+                </label>
+    
+                <input type="text" class="form-control" id="nomeCognome" placeholder="Scrivi nome e cognome" aria-describedby="Nome e cognome del passeggero">
+            </div>
     
             <div class="mb-3">
     
@@ -38,6 +49,18 @@
     
                 <input type="text" class="form-control" id="eta" placeholder="Inserisci la tua et&#224; &#40;Es: 18, 46..&#41;" aria-describedby="età dell'acquirente">
             </div>
+
+            <div class="mb-3">
+                        
+                <label for="classe">Selezionare la classe:</label>
+
+                <select name="classe" id="classe" class="form-select">
+                    <option selected>Scegli la classe</option>
+                    <option value="primaClasse">1a Classe</option>
+                    <option value="secondaClasse">2a Classe</option>
+                </select>
+            </div>
+    
     
             <div>
                 <button id="button-form" name="submit" type="submit" class="btn btn-primary mb-3" onclick="myFunction()">Invia</button>
