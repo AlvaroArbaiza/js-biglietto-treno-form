@@ -13,52 +13,59 @@
     
     <title>Biglietto del treno form</title>
 </head>
-<body>
 
-    <div class="container">
+<body class="bg-darkblue overflow-auto">
+
+    <!-- Container form box -->
+    <div class="container form-box text-dark mt-2">
 
         <!-- <h1 class="mb-5">Acquista il tuo biglietto!</h1> -->
 
-        <h2 class="text-uppercase mb-5">calcola il prezzo del tuo biglietto</h2>
+        <div id="container-h1" class="text-center d-flex justify-content-center align-items-center position-relative  mb-5">
+
+            <div class="position-absolute z-0"></div>
+            <h1 class="text-uppercase text-center position-relative z-1">calcola il prezzo del tuo biglietto</h1>
+        </div>
     
+        <!-- form -->
         <form>
 
             <!-- Nome e Cognome -->
-            <div class="mb-3">
-    
-                <label for="nomeCognome" class="form-label">
-                    Nome e Cognome               
+            <div class="user-box">    
+                
+                <input type="text" id="nomeCognome" aria-describedby="Nome e cognome del passeggero" required>
+
+                <label for="nomeCognome">
+                    Nome e Cognome:              
                 </label>
-    
-                <input type="text" class="form-control" id="nomeCognome" placeholder="Scrivi nome e cognome" aria-describedby="Nome e cognome del passeggero">
             </div>
     
             <!-- Chilometri da percorrere -->
-            <div class="mb-3">
-    
-                <label for="chilometri" class="form-label">
+            <div class="user-box">    
+                
+                <input type="text" id="chilometri"  aria-describedby="chilometri da percorrere" required>
+                
+                <label for="chilometri">
                     Chilometri da percorrere &#40;km&#41;:               
                 </label>
-    
-                <input type="text" class="form-control" id="chilometri" placeholder="Inserisci solo il numero &#40;Es: 50, 30..&#41;" aria-describedby="chilometri da percorrere">
             </div>
         
             <!-- Età -->
-            <div class="mb-3">
-    
-                <label for="età" class="form-label">
+            <div class="user-box">    
+                
+                <input type="text" id="eta" aria-describedby="età dell'acquirente" required>
+
+                <label for="età">
                     Età &#40;anni&#41;:                
                 </label>
-    
-                <input type="text" class="form-control" id="eta" placeholder="Inserisci la tua et&#224; &#40;Es: 18, 46..&#41;" aria-describedby="età dell'acquirente">
             </div>
-
+            
             <!-- Classe passeggero -->
-            <div class="mb-3">
+            <div class="mb-4" >
                         
-                <label for="classe">Selezionare la classe:</label>
+                <label class="mb-2 fw-semibold" for="classe">Selezionare la classe:</label>
 
-                <select name="classe" id="classePasseggero" class="form-select">
+                <select name="classe" id="classePasseggero" class="form-select" required>
                     <option selected>Scegli la classe</option>
                     <option value="primaClasse">1a Classe</option>
                     <option value="secondaClasse">2a Classe</option>
@@ -67,22 +74,27 @@
     
             <!-- Submit button -->
             <div>
-                <button id="button-form" name="submit" type="submit" class="btn btn-primary mb-3" onclick="myFunction()">Invia</button>
+                <button id="button-submit" class="fw-bold" name="submit" type="submit" onclick="myFunction()">Genera</button>
+            </div>
+
+            <!-- Reset button -->
+            <div>
+                <button id="button-form" class="fw-bold" name="submit" type="submit" onclick="myFunction()">Genera</button>
             </div>
     
-            <!-- OUTPUT JS - Biglietto passeggero -->
-            <div class="container d-flex flex-column">
-                <div>
-
-                    <h2 class="mb-1 text-uppercase">il tuo biglietto</h2>
-
-                    <div id="bigliettoPasseggero" class="container d-flex flex-column"></div>
-                </div>
-            </div>
             
         </form>
     </div>
     
+    <!-- OUTPUT JS - Biglietto passeggero -->
+    <div class="container d-flex flex-column mt-4">
+        <div>
+
+            <h2 class="mb-1 text-uppercase">il tuo biglietto</h2>
+
+            <div id="bigliettoPasseggero" class="container d-flex flex-column"></div>
+        </div>
+    </div>
 
 
 
