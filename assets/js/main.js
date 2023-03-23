@@ -78,39 +78,41 @@ function myFunction() {
     // Inserimento dei dati nell'output
     document.getElementById("bigliettoPasseggero").innerHTML = `
 
-         <h3>Dettagli passeggero</h3>
+        <div class="container h-100 border border-2 border-warning p-5">
 
-         <div class="row">
+            <h3 class="fw-semibold mb-4">Dettagli passeggero</h3>
 
-            <div class="col-3">
-                <h4 class="text-uppercase">nome passeggero</h4>
-                <h5>${nomeCognome}</h5>
+            <div class="row py-4 h-100 border border-2 border-dark">
+
+                <div class="col-3 d-flex flex-column justify-content-between">
+                    <h4 class="text-uppercase">nome passeggero</h4>
+                    <h4>${nomeCognome}</h4>
+                </div>
+
+                <div class="col-2 d-flex flex-column justify-content-between border-start">
+
+                    <h5>Classe</h5>
+                    <span>${classePasseggero}</span>
+                </div>
+ 
+                <div class="col-2 d-flex flex-column justify-content-between border-start">
+
+                    <h5>Carrozza</h5>
+                    <span>${carrozza}</span>
+                </div>
+
+                <div class="col-2 d-flex flex-column justify-content-between border-start">
+
+                    <h5>Codice CP</h5>
+                    <span>${codiceCP}</span>
+                </div>
+
+                <div class="col-3 border-start">
+
+                    <h5>Costo Biglietto</h5>
+                    <span>${prezzoFinale}</span>
+                </div>
             </div>
-
-            <div class="col-2">
-
-                <h5>Classe</h5>
-                <span>${classePasseggero}</span>
-            </div>
-
-            <div class="col-2">
-
-                <h5>Carrozza</h5>
-                <span>${carrozza}</span>
-            </div>
-
-            <div class="col-2">
-
-                <h5>Codice CP</h5>
-                <span>${codiceCP}</span>
-            </div>
-
-            <div class="col-3">
-
-                <h5>Costo Biglietto</h5>
-                <span>${prezzoFinale}</span>
-            </div>
-         </div>
     
     ` ;
 

@@ -4,6 +4,12 @@
     margin: 0;
 }
 
+:root {
+    --gold: #e8b563;
+    --darkgold: #d59c3f;
+    --black: #1a1a1a;
+}
+
 body.bg-darkblue {
     background-color: fffffff;
 }
@@ -21,8 +27,8 @@ body.bg-darkblue {
 
 .form-box:hover {
     opacity: 1;
-    border: 1px solid #1a1a1a;
-    box-shadow: 0 4px 18px 0 #1a1a1a;
+    border: 1px solid var(--black);
+    box-shadow: 0 4px 18px 0 var(--black);
 }
 
 .user-box {
@@ -34,10 +40,10 @@ body.bg-darkblue {
     position: relative;
     width: 100%;
     padding: 10px 0;
-    color: #1a1a1a;
+    color: var(--black);
     margin-bottom: 30px;
     border: none;
-    border-bottom: 1px solid #1a1a1a;
+    border-bottom: 1px solid var(--black);
     outline: none;
     background: transparent;
 }
@@ -49,7 +55,7 @@ body.bg-darkblue {
     top: 0;
     padding: 10px 0;
     font-weight: 600;
-    color: #1a1a1a;
+    color: var(--black);
     pointer-events: none;
     transition: all 0.5s;
 }
@@ -59,30 +65,30 @@ body.bg-darkblue {
 .form-box .user-box input:valid ~ label{
     top: -25px;
     left: 0;
-    color: #d59c3f;
+    color: var(--darkgold);
 }
 
 /* Submit Button */
 .form-box .btn-form {
     padding: 10px 20px;
-    color: #d59c3f;
+    color: var(--darkgold);
     letter-spacing: 4px;
     background-color: #ffffff;
-    border: 3px solid #e8b563;
+    border: 3px solid var(--gold);
     transition: all 0.5s;
 }
 
 /* Submit - Hover */
 .form-box .btn-form:hover {
-    background-color: #e8b563;
+    background-color: var(--gold);
     color: #fff;
     border-radius: 5px;
-    box-shadow: 0 0 5px #e8b563, 0 0 25px #e8b563;
+    box-shadow: 0 0 5px var(--gold), 0 0 25px var(--gold);
 }
 
 /* Container Titles*/
 .container-titles > div {
-    border: 4px solid #e8b563;
+    border: 4px solid var(--gold);
 }
 
 /* H1 */
