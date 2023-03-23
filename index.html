@@ -19,9 +19,8 @@
     <!-- Container form box -->
     <div class="container form-box text-dark mt-2">
 
-        <!-- <h1 class="mb-5">Acquista il tuo biglietto!</h1> -->
-
-        <div id="container-h1" class="text-center d-flex justify-content-center align-items-center position-relative  mb-5">
+        <!-- Titolo H1 -->
+        <div id="container-h1-form" class="container-titles text-center d-flex justify-content-center align-items-center position-relative mb-5">
 
             <div class="position-absolute z-0"></div>
             <h1 class="text-uppercase text-center position-relative z-1">calcola il prezzo del tuo biglietto</h1>
@@ -72,27 +71,35 @@
                 </select>
             </div>
     
-            <!-- Submit button -->
-            <div>
-                <button id="button-submit" class="fw-bold" name="submit" type="submit" onclick="myFunction()">Genera</button>
-            </div>
+            <div class="d-flex gap-5">
 
-            <!-- Reset button -->
-            <div>
-                <button id="button-form" class="fw-bold" name="submit" type="submit" onclick="myFunction()">Genera</button>
-            </div>
+                <!-- Submit button -->
+                <div>
+                    <button id="button-submit" class="fw-bold btn-form" name="submit" type="submit" onclick="myFunction()">Genera</button>
+                </div>
     
+                <!-- Reset button -->
+                <div>
+                    <button class="fw-bold btn-form" name="reset" type="submit">Annulla</button>
+                </div>
+        
+            </div>
             
         </form>
     </div>
     
     <!-- OUTPUT JS - Biglietto passeggero -->
     <div class="container d-flex flex-column mt-4">
+
         <div>
 
-            <h2 class="mb-1 text-uppercase">il tuo biglietto</h2>
+            <div id="container-h2-output" class="container-titles text-center d-flex justify-content-center align-items-center position-relative mb-5">
 
-            <div id="bigliettoPasseggero" class="container d-flex flex-column"></div>
+                <div class="position-absolute z-0"></div>
+                <h2 class="text-uppercase text-center fs-1 position-relative z-1">il tuo biglietto</h2>
+            </div>            
+
+            <div id="bigliettoPasseggero" class="container border border-2 p-5 d-flex flex-column"></div>
         </div>
     </div>
 
