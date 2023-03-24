@@ -37,29 +37,29 @@ function myFunction() {
     // tariffa in base al numero di chilometri
     const tariffa = 0.21;
 
-    // prezzo totale
-    let prezzoNormale = tariffa * chilometri;
+    // prezzo totale per km
+    let prezzo = tariffa * chilometri;
 
     // sconto minorenni del 20%
     if ( eta < 18 ) {
 
-        scontoMinori =  prezzoNormale * 0.8;
+        prezzo *= 0.8;
         prezzoFinale = `
             <p>Complimenti hai uno sconto del 20&#37; perch&#233; sei minorenne!</p>  
-            <span>${ ( scontoMinori.toFixed(2) ) }&#8364;</span>
+            <span>${ ( prezzo.toFixed(2) ) }&#8364;</span>
         `;
 
     // sconto over 65 del 40%
     } else if ( eta > 65 ) {
 
-        scontoAnziani = prezzoNormale * 0.6;
+        prezzo *= 0.6;
         prezzoFinale = `
         <p>Complimenti hai uno sconto del 40&#37; perch&#233; sei over 65!</p>  
-        <span>${ ( scontoAnziani.toFixed(2) ) }&#8364;</span>
+        <span>${ ( prezzo.toFixed(2) ) }&#8364;</span>
         `;
 
     } else { 
-        prezzoFinale = prezzoNormale;
+        prezzoFinale = prezzo;
     }
 
     // Classe passeggero
@@ -115,6 +115,13 @@ function myFunction() {
             </div>
     
     ` ;
+
+    // Add classlist into div( id = "output-container" )
+    const list = document.getElementById("output-container");
+
+    list.classList.add("box");
+
+    list.style.display = "block";
 
     console.log(nomeCognome,classePasseggero,carrozza,codiceCP,prezzoFinale);
 
