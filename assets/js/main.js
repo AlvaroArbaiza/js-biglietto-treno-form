@@ -17,7 +17,10 @@ Il recap dei dati e l'output del prezzo finale, andranno quindi stampati in pagi
 */
 
 
-function myFunction() { 
+function myFunction(x) { 
+    
+    // previene il reset della pagina al click sul bottone
+    x.preventDefault()
 
     // nome e cognome
     let nomeCognome = document.getElementById("nomeCognome").value;
@@ -118,6 +121,7 @@ function myFunction() {
 
     // Add classlist into div( id = "output-container" )
     const list = document.getElementById("output-container");
+    
 
     list.classList.add("box");
 
@@ -125,11 +129,13 @@ function myFunction() {
 
     console.log(nomeCognome,classePasseggero,carrozza,codiceCP,prezzoFinale);
 
+    
+
 }
 
 /* 
     preventDefault() per evitare il caricamento della pagina ogni volta che si chiama la funzione myFunction()
 */
-document.getElementById("button-submit").addEventListener("click", function(event){
-        event.preventDefault()
-    });
+// document.getElementById("button-submit").addEventListener("click", function(event){
+//         event.preventDefault()
+//     });
